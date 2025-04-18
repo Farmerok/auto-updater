@@ -1,0 +1,2 @@
+# auto-updater
+ Automatic renewer of EXE-files from Github Releases.  This script is designed to automatically download and update the executable files (.Exe) from the last release of the GitHub-Roads. Supports deleting the old version, the installation of a new and its automatic launch.  Completely autonomous and is suitable for inclusion in any projects where auto -intensity is needed without the participation of the user.
