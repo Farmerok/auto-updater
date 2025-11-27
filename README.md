@@ -35,4 +35,3 @@ This Python script is designed for automatically updating an EXE file from GitHu
 | 💬 **Get in Touch**            | 🌐 **Link**                                                                                 |
 |--------------------------------|----------------------------------------------------------------------------------------------|
 | **Telegram**                   | [Contact on Telegram](https://t.me/insiderkeeps)                                             |
-| **YouTube**                   | [Open](https://www.youtube.com/@IKDeveloper)                                                  |
