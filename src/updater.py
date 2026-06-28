@@ -1,6 +1,7 @@
 import os
 import sys
 import requests
+import time
 from subprocess import Popen
 
 base_path = os.path.dirname(os.path.abspath(sys.argv[0]))  # path
@@ -8,6 +9,7 @@ base_path = os.path.dirname(os.path.abspath(sys.argv[0]))  # path
 REPOS = {
     "PCGuardControl": "Farmerok/Telegram-Remote-Control-PC",
     "BinDrop": "Farmerok/BinDrop",
+    "Uvoxus": "Farmerok/Uvoxus-Voice-Assistant"
 }
 
 if len(sys.argv) > 1 and sys.argv[1] in REPOS:
@@ -40,12 +42,22 @@ if len(sys.argv) > 2:
 else:
     original_name = release_file_name
 
+download_delay = 0
+if len(sys.argv) > 3:
+    try:
+        download_delay = int(sys.argv[3])
+    except ValueError:
+        download_delay = 0
+
 NAME_SCRIPT = os.path.join(base_path, original_name)
 NAME_NEW_SCRIPT = os.path.join(base_path, original_name + '.new')
 
 try:
     # download 
     try:
+        if download_delay > 0:
+            print(f"Waiting {download_delay} seconds before downloading...")
+            time.sleep(download_delay)
         response = requests.get(URL_DOWNLOADS_FILE, stream=True)
         response.raise_for_status()
         with open(NAME_NEW_SCRIPT, 'wb') as f:
